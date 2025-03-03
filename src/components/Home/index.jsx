@@ -8,9 +8,9 @@ const url = "https://v2.api.noroff.dev/online-shop";
 const Home = () => {
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
-  const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     async function getData() {
@@ -20,6 +20,7 @@ const Home = () => {
         const response = await fetch(url);
         const json = await response.json();
         setProducts(json.data);
+
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -29,6 +30,17 @@ const Home = () => {
 
     getData();
   }, []);
+
+
+  const filteredProducts = products.filter((product) => {
+    const productTags = Array.isArray(product.tags) ? product.tags : [];
+  
+    return (
+      product.title.trim().toLowerCase().includes(searchQuery.trim().toLowerCase()) ||
+      productTags.some(tag => tag.trim().toLowerCase().includes(searchQuery.trim().toLowerCase()))
+    );
+  });
+
 
   if (isLoading) {
     return <div>Loading products</div>;
@@ -40,7 +52,15 @@ const Home = () => {
 
   return (
     <div>
-      {products.map((product) => (
+         <input
+        type="text"
+        placeholder="Search for a product..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+
+{filteredProducts.length > 0 ? (
+      filteredProducts.map((product) => (
         <div key={product.id}>
           <Link to={`/product/${product.id}`}>
             <h2>{product.title}</h2>
@@ -52,23 +72,13 @@ const Home = () => {
           <button onClick={() => dispatch(addProduct(product))}>
             Add to cart
           </button>
-
-          <h3>Reviews:</h3>
-          {product.reviews.length > 0 ? (
-            product.reviews.map((review, index) => (
-              <div key={index}>
-                <h4>Review by: {review.username}</h4>
-                <p>Rating: {review.rating} ⭐</p>
-                <p>{review.description}</p>
               </div>
             ))
           ) : (
-            <p>No reviews yet.</p>
+            <p>No products found.</p>
           )}
         </div>
-      ))}
-    </div>
-  );
-};
+      );
+    };
 
 export default Home;
