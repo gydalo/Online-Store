@@ -41,7 +41,8 @@ const Product = () => {
       <div>
         <h1>{product.title}</h1>
         <img src={product.image.url} alt={product.title} />
-        <p>Price: ${product.price}</p>
+        <p>{product.discountedPrice} kr</p>
+        <p>Original price: {product.price} kr</p>
         <p>Rating: {product.rating} ⭐</p>
         <p>{product.description}</p>
         <button onClick={() => dispatch(addProduct(product))}>

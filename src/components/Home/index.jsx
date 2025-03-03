@@ -7,7 +7,8 @@ const url = "https://v2.api.noroff.dev/online-shop";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const [posts, setPosts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -18,7 +19,7 @@ const Home = () => {
         setIsLoading(true);
         const response = await fetch(url);
         const json = await response.json();
-        setPosts(json.data);
+        setProducts(json.data);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -30,7 +31,7 @@ const Home = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading posts</div>;
+    return <div>Loading products</div>;
   }
 
   if (isError) {
@@ -39,21 +40,22 @@ const Home = () => {
 
   return (
     <div>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <Link to={`/product/${post.id}`}>
-            <h2>{post.title}</h2>
-            <p>Rating: {post.rating} ⭐</p>
-            <img src={post.image.url} alt={post.title} />
-            <p>{post.description}</p>{" "}
+      {products.map((product) => (
+        <div key={product.id}>
+          <Link to={`/product/${product.id}`}>
+            <h2>{product.title}</h2>
+            <p>Rating: {product.rating} ⭐</p>
+            <img src={product.image.url} alt={product.title} />
+            <p>{product.discountedPrice} kr</p>
+            <p>Original price: {product.price} kr</p>
           </Link>
           <button onClick={() => dispatch(addProduct(product))}>
             Add to cart
           </button>
 
           <h3>Reviews:</h3>
-          {post.reviews.length > 0 ? (
-            post.reviews.map((review, index) => (
+          {product.reviews.length > 0 ? (
+            product.reviews.map((review, index) => (
               <div key={index}>
                 <h4>Review by: {review.username}</h4>
                 <p>Rating: {review.rating} ⭐</p>
