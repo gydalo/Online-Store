@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct, removeProduct } from "../CartSlice";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,12 @@ const Cart = () => {
   return (
     <div>
       <h1>Cart</h1>
-      {cartItems.length === 0 ? <p>Your cart is empty.</p> : null}
+      {cartItems.length === 0 ? (<p>Your cart is empty.</p>)
+       : (
+        <button>
+        <Link to="/checkout">Checkout</Link>
+      </button>
+       )}
 
       {cartItems.map((item) => (
         <div key={item.id}>
