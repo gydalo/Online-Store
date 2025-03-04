@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Product from "./components/Product/Product.jsx";
 import Cart from "./components/Cart/index.jsx";
+import Contact from "./components/Contact/index.jsx";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="product/:id" element={<Product />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="contact" element={<Contact />}/>
         </Routes>
       </Layout>
   );
