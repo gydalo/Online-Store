@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Routes, Route, Link, useParams } from "react-router-dom";
 import { addProduct } from "../CartSlice";
+import DiscountLabel from "../DiscountLabel";
 
 const url = "https://v2.api.noroff.dev/online-shop";
 
@@ -66,6 +67,7 @@ const Home = () => {
             <h2>{product.title}</h2>
             <p>Rating: {product.rating} ⭐</p>
             <img src={product.image.url} alt={product.title} />
+            <DiscountLabel originalPrice={product.price} discountedPrice={product.discountedPrice} />
             <p>{product.discountedPrice} kr</p>
             <p>Original price: {product.price} kr</p>
           </Link>

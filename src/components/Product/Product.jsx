@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../CartSlice";
+import DiscountLabel from "../DiscountLabel";
 
 
 const Product = () => {
@@ -41,6 +42,7 @@ const Product = () => {
       <div>
         <h1>{product.title}</h1>
         <img src={product.image.url} alt={product.title} />
+        <DiscountLabel originalPrice={product.price} discountedPrice={product.discountedPrice} />
         <p>{product.discountedPrice} kr</p>
         <p>Original price: {product.price} kr</p>
         <p>Rating: {product.rating} ⭐</p>
