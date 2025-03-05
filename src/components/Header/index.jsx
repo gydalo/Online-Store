@@ -19,7 +19,7 @@ const Header = () => {
     <header>
       <nav>
         <li>
-          <Link to={`/`}><img className="logo-header" src="./images/Aaryn-logo-slogan.png" alt="Logo with slogan" /></Link>
+          <Link to={`/`}><img className="logo-header" src="../images/Aaryn-logo-slogan.png" alt="Logo with slogan" /></Link>
         </li>
         <li>
           <Link to="/contact">

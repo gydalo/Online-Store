@@ -14,13 +14,13 @@ const Layout = ({ children }) => {
         <div>
           <div className="image-header">
             <img
-              src="/images/mitchell-luo-_A1pTfsMNY4-unsplash.jpg"
+              src="../images/mitchell-luo-_A1pTfsMNY4-unsplash.jpg"
               alt="Homepage Header"
               className="header-image"
             />
           </div>
           <div className="header-image-logo">
-            <img src="/images/Aaryn-logo-slogan.png" alt="Aaryn logo" />
+            <img src="../images/Aaryn-logo-slogan.png" alt="Aaryn logo" />
           </div>
         </div>
       )}
