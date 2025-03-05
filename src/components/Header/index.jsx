@@ -5,6 +5,7 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
+import "/src/css/style.css";
 
 const Header = () => {
   const cartItems = useSelector((state) => state.cart.products);
@@ -17,7 +18,7 @@ const Header = () => {
     <header>
       <nav>
         <li>
-          <Link to={`/`}>Home</Link>
+          <Link to={`/`}><img className="logo-header" src="./images/Aaryn-logo-slogan.png" alt="Logo with slogan" /></Link>
         </li>
         <li>
           <Link to="/contact">
