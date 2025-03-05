@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import "/src/css/style.css";
+import styles from "./Header.module.css"
 
 const Header = () => {
   const cartItems = useSelector((state) => state.cart.products);

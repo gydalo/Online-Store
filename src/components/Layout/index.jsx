@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
             alt="Homepage Header"
             className="header-image"
           />
-          <div>
+          <div className="header-image-logo">
             <img src="/images/Aaryn-logo-slogan.png" alt="Aaryn logo" />
           </div>
         </div>
