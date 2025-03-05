@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProduct } from "../../components/CartSlice";
 import DiscountLabel from "../../components/DiscountLabel";
-import "/src/css/style.css";
+import styles from "./index.module.css";
 
 const url = "https://v2.api.noroff.dev/online-shop";
 

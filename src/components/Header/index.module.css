@@ -1,9 +1,34 @@
 header {
-    background-color: #C9A781;
+  background-color: #c9a781;
+  width: 100%;
 }
 
-li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.logoHeader {
+    width: 100px;
+    height: auto;
   }
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.headerBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerBarLinks {
+  display: flex;
+  gap: 15px;
+}

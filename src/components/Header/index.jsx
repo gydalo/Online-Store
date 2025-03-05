@@ -5,7 +5,6 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
-import "/src/css/style.css";
 import styles from "./index.module.css"
 
 const Header = () => {
@@ -17,10 +16,14 @@ const Header = () => {
 
   return (
     <header>
+      <div className={styles.headerBar}>
       <nav>
+      <div className={styles.headerBarLogo}>
         <li>
-          <Link to={`/`}><img className="logo-header" src="../images/Aaryn-logo-slogan.png" alt="Logo with slogan" /></Link>
+          <Link to={`/`}><img className={styles.logoHeader} src="../images/Aaryn-logo-slogan.png" alt="Logo with slogan" /></Link>
         </li>
+        </div>
+        <div className={styles.headerBarLinks}>
         <li>
           <Link to="/contact">
             <FontAwesomeIcon icon={faPaperPlane} style={{ color: "#5b4f47" }} />
@@ -35,7 +38,9 @@ const Header = () => {
             {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
           </Link>
         </li>
+        </div>
       </nav>
+      </div>
     </header>
   );
 };

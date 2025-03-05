@@ -1,0 +1,25 @@
+.imageHeader {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+  
+  .imageHeader img {
+    width: 100%;
+    height: 400px;
+    object-position: bottom;
+    object-fit: cover;
+  }
+  
+  .overlayLogo {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+  }
+  
+  .overlayLogo img {
+    width: 100%; 
+    height: auto;
+  }
