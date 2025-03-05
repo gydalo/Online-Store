@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./components/Layout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Product from "./components/Product/Product.jsx";
-import Cart from "./components/Cart/index.jsx";
-import Contact from "./components/Contact/index.jsx";
-import Checkout from "./components/Checkout/index.jsx";
-
+import Home from "./pages/Home/index.jsx";
+import Product from "./pages/Product/Product.jsx";
+import Cart from "./pages/Cart/index.jsx";
+import Contact from "./pages/Contact/index.jsx";
+import Checkout from "./pages/Checkout/index.jsx";
 
 function App() {
   return (
-      <Layout>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="product/:id" element={<Product />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="contact" element={<Contact />}/>
-          <Route path="checkout" element={<Checkout />}/>
-        </Routes>
-      </Layout>
+    <Layout>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="product/:id" element={<Product />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="checkout" element={<Checkout />} />
+      </Routes>
+    </Layout>
   );
 }
 
 export default App;
-
 
 /*
 

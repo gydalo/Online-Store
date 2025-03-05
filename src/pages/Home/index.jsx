@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addProduct } from "../CartSlice";
-import DiscountLabel from "../DiscountLabel";
+import { addProduct } from "../../components/CartSlice";
+import DiscountLabel from "../../components/DiscountLabel";
 import "/src/css/style.css";
 
 const url = "https://v2.api.noroff.dev/online-shop";
@@ -57,20 +57,12 @@ const Home = () => {
 
   return (
     <div>
-      <div>
-        <img
-          className="hp-header-image"
-          src="./images/mitchell-luo-_A1pTfsMNY4-unsplash.jpg"
-          alt="Homepage header"
-        />
-      </div>
       <input
         type="text"
         placeholder="Search for a product..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-
       {filteredProducts.length > 0 ? (
         filteredProducts.map((product) => (
           <div key={product.id}>

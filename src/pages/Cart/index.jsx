@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, removeProduct } from "../CartSlice";
+import { addProduct, removeProduct } from "../../components/CartSlice";
 import { Link } from "react-router-dom";
-import { resetCart } from "../CartSlice";
-import DiscountLabel from "../DiscountLabel";
+import { resetCart } from "../../components/CartSlice";
+import DiscountLabel from "../../components/DiscountLabel";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -29,9 +29,14 @@ const Cart = () => {
         <div key={item.id}>
           <h3>{item.title}</h3>
           <p>Quantity: {item.quantity}</p>
-          <DiscountLabel originalPrice={item.price} discountedPrice={item.discountedPrice} />
-          <p>Price for one: {item.discountedPrice.toFixed(2)} kr</p> 
-          <p>Subtotal: {(item.quantity * item.discountedPrice).toFixed(2)} kr</p>
+          <DiscountLabel
+            originalPrice={item.price}
+            discountedPrice={item.discountedPrice}
+          />
+          <p>Price for one: {item.discountedPrice.toFixed(2)} kr</p>
+          <p>
+            Subtotal: {(item.quantity * item.discountedPrice).toFixed(2)} kr
+          </p>
           <button onClick={() => dispatch(addProduct(item))}>Add</button>
           <button onClick={() => dispatch(removeProduct(item.id))}>
             Remove
