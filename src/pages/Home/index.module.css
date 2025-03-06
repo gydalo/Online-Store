@@ -12,15 +12,6 @@ main {
   margin: 0 auto;
 }
 
-.logoAaryn img {
-  width: 150px;
-}
-
-.logoAaryn {
-  justify-self: center;
-  padding: 60px 20px 0px 20px;
-}
-
 .inputSearch {
   padding: 5px;
   margin-top: 20px;
@@ -69,15 +60,4 @@ main {
 .productCard button {
   width: 100px;
   align-self: center;
-}
-
-@media (min-width: 800px) {
-  .logoAaryn img {
-    width: 200px;
-  }
-
-  .logoAaryn {
-    justify-self: center;
-    padding: 100px 20px 20px 20px;
-  }
 }

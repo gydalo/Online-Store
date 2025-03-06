@@ -4,6 +4,7 @@ import propTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import styles from "./index.module.css";
 
+
 const Layout = ({ children }) => {
   const location = useLocation();
   const isHomepage = location.pathname === "/";
@@ -21,6 +22,9 @@ const Layout = ({ children }) => {
         </div>
       )}
       <Header />
+      <div className={styles.logoAaryn}>
+        <img src="/images/Aaryn-logo.png" alt="Aaryn logo" />
+      </div>
       <main>{children}</main>
       <Footer />
     </div>

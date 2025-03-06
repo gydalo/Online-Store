@@ -34,14 +34,53 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    color: #FD805D;
+    background-color: #fd805d00;
+    outline: solid 1px #FD805D;
+}
 
+h1, h2, h3, button {
+font-family: "Ibarra Real Nova", sans-serif;
+font-weight: 100;
+}
+
+p, a {
+    font-family: "Manrope", sans-serif;
+}
+
+.logoAaryn img {
+    width: 150px;
+}
+  
+  .logoAaryn {
+    justify-self: center;
+    padding: 60px 20px 0px 20px;
+  }
+
+  .originalPrice {
+    font-size: 0.25rem;
+
+  }
+  
 
 @media (min-width: 800px) {
   .overlayLogo {
     width: 200px;
   }
 
-}
+    .logoAaryn img {
+      width: 200px;
+    }
+  
+    .logoAaryn {
+      justify-self: center;
+      padding: 100px 20px 20px 20px;
+    }
+  }
+
+
+  
 
 @media (min-width: 1000px) {
   .imageHeader {
@@ -54,4 +93,3 @@ button {
     width: 300px;
   }
 }
-

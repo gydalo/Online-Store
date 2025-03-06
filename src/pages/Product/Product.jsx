@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../components/CartSlice";
 import DiscountLabel from "../../components/DiscountLabel";
+import styles from "./index.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Product = () => {
   const { id } = useParams();
@@ -40,19 +43,52 @@ const Product = () => {
 
   return (
     <div>
-      <h1>{product.title}</h1>
-      <img src={product.image.url} alt={product.title} />
-      <DiscountLabel
-        originalPrice={product.price}
-        discountedPrice={product.discountedPrice}
-      />
-      <p>{product.discountedPrice} kr</p>
-      <p>Original price: {product.price} kr</p>
-      <p>Rating: {product.rating} ⭐</p>
-      <p>{product.description}</p>
-      <button onClick={() => dispatch(addProduct(product))}>Add to cart</button>
+      <div className={styles.product}>
+        <div className={styles.productImage}>
+          <img src={product.image.url} alt={product.title} />
+        </div>
+        <div className={styles.productInfo}>
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+          <DiscountLabel
+            originalPrice={product.price}
+            discountedPrice={product.discountedPrice}
+          />
+          <p>{product.discountedPrice} kr</p>
+          <p className={styles.originalPrice}>
+            Original price: {product.price} kr
+          </p>
+          <button onClick={() => dispatch(addProduct(product))}>
+            Add to cart
+          </button>
+        </div>
+      </div>
+      <div className={styles.reviewsHeading}>
+        <h2>Reviews</h2>
+        <p>
+          Rating: {product.rating}{" "}
+          <FontAwesomeIcon icon={faStar} style={{ color: "#fd805d" }} />
+        </p>
+      </div>
+      {product.reviews && product.reviews.length > 0 ? (
+        <div className={styles.reviewsReview}>
+          {product.reviews.map((review) => (
+            <div key={review.id}>
+              <h3>{review.username}</h3>
+              <p>
+                Rating: {review.rating}{" "}
+                <FontAwesomeIcon icon={faStar} style={{ color: "#fd805d" }} />
+              </p>
+              <p>{review.description}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className={styles.noReviews}>
+          <p>No reviews yet.</p>
+        </div>
+      )}
     </div>
   );
 };
-
 export default Product;

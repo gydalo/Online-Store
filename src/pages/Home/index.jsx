@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { addProduct } from "../../components/CartSlice";
 import DiscountLabel from "../../components/DiscountLabel";
 import styles from "./index.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const url = "https://v2.api.noroff.dev/online-shop";
 
@@ -57,9 +59,6 @@ const Home = () => {
 
   return (
     <div>
-      <div className={styles.logoAaryn}>
-        <img src="./images/Aaryn-logo.png" alt="Aaryn logo" />
-      </div>
       <div className={styles.searchContainer}>
         <input
           type="text"
@@ -75,14 +74,19 @@ const Home = () => {
             <div key={product.id} className={styles.productCard}>
               <Link to={`/product/${product.id}`}>
                 <h2>{product.title}</h2>
-                <p>Rating: {product.rating} ⭐</p>
+                <p>
+                  Rating: {product.rating}{" "}
+                  <FontAwesomeIcon icon={faStar} style={{ color: "#fd805d" }} />
+                </p>
                 <img src={product.image.url} alt={product.title} />
                 <DiscountLabel
                   originalPrice={product.price}
                   discountedPrice={product.discountedPrice}
                 />
                 <p>{product.discountedPrice} kr</p>
-                <p>Original price: {product.price} kr</p>
+                <p className={styles.originalPrice}>
+                  Original price: {product.price} kr
+                </p>
               </Link>
               <button onClick={() => dispatch(addProduct(product))}>
                 Add to cart
