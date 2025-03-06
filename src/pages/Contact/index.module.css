@@ -1,0 +1,68 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  color: #5b4f47;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+label {
+  margin: 15px 0px 15px 0px;
+}
+
+.inputFormSmall {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 15px;
+  justify-self: center;
+  margin: 0 auto;
+}
+
+.inputFormMedium {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 15px;
+  margin: 0 auto;
+}
+
+.inputFormBig {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 15px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.inputFormBig input {
+  height: 100%;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+.errorMessage {
+    color: red;
+    font-size: 0.75rem;
+}

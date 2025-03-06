@@ -1,0 +1,7 @@
+.orderConfirmation {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #5b4f47;
+    margin-top: 20px;
+}

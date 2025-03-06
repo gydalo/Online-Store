@@ -9,6 +9,7 @@ import Checkout from "./pages/Checkout/index.jsx";
 
 function App() {
   return (
+    <div className="wrapper">
     <Layout>
       <Routes>
         <Route index element={<Home />} />
@@ -18,6 +19,7 @@ function App() {
         <Route path="checkout" element={<Checkout />} />
       </Routes>
     </Layout>
+    </div>
   );
 }
 

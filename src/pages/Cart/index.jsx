@@ -4,6 +4,7 @@ import { addProduct, removeProduct } from "../../components/CartSlice";
 import { Link } from "react-router-dom";
 import { resetCart } from "../../components/CartSlice";
 import DiscountLabel from "../../components/DiscountLabel";
+import styles from "./index.module.css";
 
 const Cart = () => {
   const dispatch = useDispatch();

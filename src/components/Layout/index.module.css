@@ -1,3 +1,13 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .imageHeader {
   position: relative;
   width: 100vw;
@@ -25,6 +35,8 @@
     width: 200px;
 }
 
+
+
 /* Button */
 button {
     color: white;
@@ -45,7 +57,7 @@ font-family: "Ibarra Real Nova", sans-serif;
 font-weight: 100;
 }
 
-p, a {
+p, a, input, label {
     font-family: "Manrope", sans-serif;
 }
 

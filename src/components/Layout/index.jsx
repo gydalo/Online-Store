@@ -21,12 +21,14 @@ const Layout = ({ children }) => {
           </div>
         </div>
       )}
+      <div className={styles.layout}>
       <Header />
       <div className={styles.logoAaryn}>
         <img src="/images/Aaryn-logo.png" alt="Aaryn logo" />
       </div>
       <main>{children}</main>
-      <Footer />
+      <Footer  />
+      </div>
     </div>
   );
 };
