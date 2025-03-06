@@ -14,6 +14,7 @@ const Header = () => {
     0
   );
 
+  /*
   return (
     <header>
       <div className={styles.headerBar}>
@@ -44,5 +45,42 @@ const Header = () => {
     </header>
   );
 };
+*/
+
+
+return (
+  <header className={styles.headerBar}>
+    <nav className={styles.navBar}>
+      <div className={styles.headerBarLogo}>
+        <li>
+          <Link to="/">
+            <img
+              className={styles.logoHeader}
+              src="../images/Aaryn-logo-slogan.png"
+              alt="Logo with slogan"
+            />
+          </Link>
+        </li>
+      </div>
+      <div className={styles.headerBarLinks}>
+        <li>
+          <Link to="/contact">
+            <FontAwesomeIcon icon={faPaperPlane} style={{ color: "#5b4f47" }} />
+          </Link>
+        </li>
+        <li>
+          <Link to="/cart">
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              style={{ color: "#5b4f47" }}
+            />
+            {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
+          </Link>
+        </li>
+      </div>
+    </nav>
+  </header>
+);
+}
 
 export default Header;

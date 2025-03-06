@@ -1,9 +1,83 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: #5B4F47;
+  text-decoration: none;
+  color: #5b4f47;
 }
 
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.logoAaryn img {
+  width: 150px;
+}
+
+.logoAaryn {
+  justify-self: center;
+  padding: 60px 20px 0px 20px;
+}
+
+.inputSearch {
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.inputSearch {
+  margin-top: 100px;
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.productList {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.productCard {
+  width: 400px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productCard img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.productCard button {
+  width: 100px;
+  align-self: center;
+}
+
+@media (min-width: 800px) {
+  .logoAaryn img {
+    width: 200px;
+  }
+
+  .logoAaryn {
+    justify-self: center;
+    padding: 100px 20px 20px 20px;
+  }
+}

@@ -57,34 +57,42 @@ const Home = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search for a product..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((product) => (
-          <div key={product.id}>
-            <Link to={`/product/${product.id}`}>
-              <h2>{product.title}</h2>
-              <p>Rating: {product.rating} ⭐</p>
-              <img src={product.image.url} alt={product.title} />
-              <DiscountLabel
-                originalPrice={product.price}
-                discountedPrice={product.discountedPrice}
-              />
-              <p>{product.discountedPrice} kr</p>
-              <p>Original price: {product.price} kr</p>
-            </Link>
-            <button onClick={() => dispatch(addProduct(product))}>
-              Add to cart
-            </button>
-          </div>
-        ))
-      ) : (
-        <p>No products found.</p>
-      )}
+      <div className={styles.logoAaryn}>
+        <img src="./images/Aaryn-logo.png" alt="Aaryn logo" />
+      </div>
+      <div className={styles.searchContainer}>
+        <input
+          type="text"
+          placeholder="Search for a product..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className={styles.inputSearch}
+        />
+      </div>
+      <div className={styles.productList}>
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <div key={product.id} className={styles.productCard}>
+              <Link to={`/product/${product.id}`}>
+                <h2>{product.title}</h2>
+                <p>Rating: {product.rating} ⭐</p>
+                <img src={product.image.url} alt={product.title} />
+                <DiscountLabel
+                  originalPrice={product.price}
+                  discountedPrice={product.discountedPrice}
+                />
+                <p>{product.discountedPrice} kr</p>
+                <p>Original price: {product.price} kr</p>
+              </Link>
+              <button onClick={() => dispatch(addProduct(product))}>
+                Add to cart
+              </button>
+            </div>
+          ))
+        ) : (
+          <p>No products found.</p>
+        )}
+      </div>
     </div>
   );
 };
