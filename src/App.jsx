@@ -10,15 +10,15 @@ import Checkout from "./pages/Checkout/index.jsx";
 function App() {
   return (
     <div className="wrapper">
-    <Layout>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="product/:id" element={<Product />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="checkout" element={<Checkout />} />
-      </Routes>
-    </Layout>
+      <Layout>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="product/:id" element={<Product />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="checkout" element={<Checkout />} />
+        </Routes>
+      </Layout>
     </div>
   );
 }

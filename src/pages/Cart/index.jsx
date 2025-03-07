@@ -17,35 +17,54 @@ const Cart = () => {
 
   return (
     <div>
-      <h1>Cart</h1>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <button onClick={() => dispatch(resetCart())}>
-          <Link to="/checkout">Checkout</Link>
-        </button>
-      )}
-
-      {cartItems.map((item) => (
-        <div key={item.id}>
-          <h3>{item.title}</h3>
-          <p>Quantity: {item.quantity}</p>
-          <DiscountLabel
-            originalPrice={item.price}
-            discountedPrice={item.discountedPrice}
-          />
-          <p>Price for one: {item.discountedPrice.toFixed(2)} kr</p>
-          <p>
-            Subtotal: {(item.quantity * item.discountedPrice).toFixed(2)} kr
-          </p>
-          <button onClick={() => dispatch(addProduct(item))}>Add</button>
-          <button onClick={() => dispatch(removeProduct(item.id))}>
-            Remove
-          </button>
+      <h1 className={styles.cartTitle}>Cart</h1>
+      {cartItems.map((product) => (
+        <div key={product.id}>
+          <div className={styles.cartContainer}>
+            <div className={styles.cartImage}>
+              <img src={product.image.url} alt={product.title} />
+            </div>
+            <div className={styles.cartInfo}>
+              <h3>{product.title}</h3>
+              <p>Quantity: {product.quantity}</p>
+              <DiscountLabel
+                originalPrice={product.price}
+                discountedPrice={product.discountedPrice}
+              />
+              <p>Price for one: {product.discountedPrice.toFixed(2)} kr</p>
+              <p>
+                Subtotal:{" "}
+                {(product.quantity * product.discountedPrice).toFixed(2)} kr
+              </p>
+              <div className={styles.buttonsCartContainer}>
+                <div className={styles.buttonCartAdd}>
+                  <button onClick={() => dispatch(addProduct(product))}>
+                    Add
+                  </button>
+                </div>
+                <div className={styles.buttonCartRemove}>
+                  <button onClick={() => dispatch(removeProduct(product.id))}>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       ))}
+      <div className={styles.cartCheckout}>
+        <h2>Cart Total: {cartTotal.toFixed(2)} kr</h2>
 
-      <h2>Cart Total: {cartTotal.toFixed(2)} kr</h2>
+        {cartItems.length === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          <Link to="/checkout">
+          <button className={styles.checkoutButton} onClick={() => dispatch(resetCart())}>
+            Checkout
+          </button>
+        </Link>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,19 +1,29 @@
-html, body {
+html,
+body {
   height: 100%;
+  overflow-x: hidden;
   margin: 0;
+  color: #5b4f47;
+  display: block;
 }
 
 .layout {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .imageHeader {
   position: relative;
-  width: 100vw;
+  width: 100%;
   max-width: 1500px;
   height: 30vh;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .imageHeader img {
@@ -32,67 +42,69 @@ html, body {
 }
 
 .overlayLogo img {
-    width: 200px;
+  width: 200px;
 }
-
-
 
 /* Button */
 button {
-    color: white;
-    background-color: #FD805D;
-    padding: 5px 10px 5px 10px;
-    border: none;
-    cursor: pointer;
+  color: white;
+  background-color: #fd805d;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  margin-top: 30px;
 }
 
 button:hover {
-    color: #FD805D;
-    background-color: #fd805d00;
-    outline: solid 1px #FD805D;
+  color: #fd805d;
+  background-color: #fd805d00;
+  outline: solid 1px #fd805d;
 }
 
-h1, h2, h3, button {
-font-family: "Ibarra Real Nova", sans-serif;
-font-weight: 100;
+h1,
+h2,
+h3,
+button {
+  font-family: "Ibarra Real Nova", sans-serif;
+  font-weight: 100;
 }
 
-p, a, input, label {
-    font-family: "Manrope", sans-serif;
+p,
+input,
+label {
+  font-family: "Manrope", sans-serif;
 }
 
 .logoAaryn img {
-    width: 150px;
+  width: 150px;
 }
-  
-  .logoAaryn {
-    justify-self: center;
-    padding: 60px 20px 0px 20px;
-  }
 
-  .originalPrice {
-    font-size: 0.25rem;
+.logoAaryn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px 0px 20px;
+}
 
-  }
-  
+.originalPrice {
+  font-size: 0.25rem;
+}
 
 @media (min-width: 800px) {
   .overlayLogo {
     width: 200px;
   }
 
-    .logoAaryn img {
-      width: 200px;
-    }
-  
-    .logoAaryn {
-      justify-self: center;
-      padding: 100px 20px 20px 20px;
-    }
+  .logoAaryn img {
+    width: 200px;
   }
 
-
-  
+  .logoAaryn {
+    justify-self: center;
+    padding: 100px 20px 20px 20px;
+  }
+}
 
 @media (min-width: 1000px) {
   .imageHeader {

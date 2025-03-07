@@ -9,7 +9,6 @@ a {
 
 main {
   max-width: 1500px;
-  margin: 0 auto;
 }
 
 .inputSearch {
@@ -60,4 +59,11 @@ main {
 .productCard button {
   width: 100px;
   align-self: center;
+}
+
+
+@media (min-width: 800px) {
+  main {
+    margin: 0 auto;
+  }
 }

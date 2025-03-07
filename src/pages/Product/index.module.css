@@ -5,7 +5,6 @@
   justify-content: center;
   padding-top: 100px;
   gap: 40px;
-  color: #5b4f47;
 }
 
 .productImage img {
@@ -33,7 +32,6 @@
   flex-direction: column;
   padding-top: 60px;
   align-items: center;
-  color: #5b4f47;
 }
 
 .reviewsReview {
@@ -42,7 +40,6 @@
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-  color: #5b4f47;
   max-width: 500px;
   margin: 0 auto;
   flex-direction: column;
@@ -57,7 +54,6 @@
 }
 
 .noReviews {
-  color: #5b4f47;
   display: flex;
   justify-content: center;
 }
