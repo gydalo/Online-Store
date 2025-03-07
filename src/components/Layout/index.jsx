@@ -8,50 +8,24 @@ const Layout = ({ children }) => {
   const location = useLocation();
   const isHomepage = location.pathname === "/";
 
-  /*
   return (
-    <div>
-      <div className={styles.layout}>
-        {isHomepage && (
-          <div>
-            <div className={styles.imageHeader}>
-              <img src="../images/Resized-header.jpg" alt="Homepage Header" />
-              <div className={styles.overlayLogo}>
-                <img src="../images/Aaryn-logo-slogan.png" alt="Aaryn logo" />
-              </div>
-            </div>
+    <div className={styles.layout}>
+      {isHomepage && (
+        <div className={styles.imageHeader}>
+          <img src="/images/Resized-header.jpg" alt="Homepage Header" />
+          <div className={styles.overlayLogo}>
+            <img src="/images/Aaryn-logo-slogan.png" alt="Aaryn logo" />
           </div>
-        )}
-        <Header />
-        <div className={styles.logoAaryn}>
-          <img src="/images/Aaryn-logo.png" alt="Aaryn logo" />
         </div>
-        <main>{children}</main>
-        <Footer />
+      )}
+      <Header />
+      <div className={styles.logoAaryn}>
+        <img src="/images/Aaryn-logo.png" alt="Aaryn logo" />
       </div>
+      <main>{children}</main>
+      <Footer />
     </div>
   );
-};
-*/
-
-return (
-  <div className={styles.layout}>
-    {isHomepage && (
-      <div className={styles.imageHeader}>
-        <img src="/images/Resized-header.jpg" alt="Homepage Header" />
-        <div className={styles.overlayLogo}>
-          <img src="/images/Aaryn-logo-slogan.png" alt="Aaryn logo" />
-        </div>
-      </div>
-    )}
-    <Header />
-    <div className={styles.logoAaryn}>
-      <img src="/images/Aaryn-logo.png" alt="Aaryn logo" />
-    </div>
-    <main>{children}</main>
-    <Footer />
-  </div>
-);
 };
 
 Layout.propTypes = {

@@ -4,6 +4,27 @@ header {
   width: 100%;
 }
 
+.cartBadgeDiv {
+  position: relative;
+  display: inline-block;
+}
+
+.cartBadge {
+  position: absolute;
+  top: 8px;
+  right: -8px;
+  background-color: #28211a;
+  color: white;
+  font-size: 0.5rem;
+  font-weight: bold;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
 .navBar {
   display: flex;
   justify-content: space-between;
@@ -38,7 +59,7 @@ li {
   padding: 0;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .headerBar {
     width: 80vw;
   }

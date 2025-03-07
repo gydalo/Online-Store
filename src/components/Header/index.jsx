@@ -38,15 +38,17 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/cart">
-              <FontAwesomeIcon
-                icon={faCartShopping}
-                style={{ color: "#5b4f47" }}
-              />
-              {totalItems > 0 && (
-                <span className="cart-badge">{totalItems}</span>
-              )}
-            </Link>
+            <div className={styles.cartBadgeDiv}>
+              <Link to="/cart">
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  style={{ color: "#5b4f47" }}
+                />
+                {totalItems > 0 && (
+                  <span className={styles.cartBadge}>{totalItems}</span>
+                )}
+              </Link>
+            </div>
           </li>
         </div>
       </nav>
