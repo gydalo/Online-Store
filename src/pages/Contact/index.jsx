@@ -8,13 +8,13 @@ const schema = yup
   .object({
     firstName: yup
       .string()
-      .min(3, "Your first name should be at least 3 characters.")
-      .max(10, "Your first name cannot be longer than 10 characters.")
+      .min(2, "Your first name should be at least 2 characters.")
+      .max(15, "Your first name cannot be longer than 15 characters.")
       .required("Please enter your first name"),
     lastName: yup
       .string()
-      .min(1, "Your last name should be at least 1 characters.")
-      .max(10, "Your first name cannot be longer than 10 characters.")
+      .min(2, "Your last name should be at least 2 characters.")
+      .max(15, "Your last name cannot be longer than 20 characters.")
       .required("Please enter your last name"),
     email: yup
       .string()
