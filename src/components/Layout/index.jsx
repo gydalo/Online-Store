@@ -38,15 +38,15 @@ return (
   <div className={styles.layout}>
     {isHomepage && (
       <div className={styles.imageHeader}>
-        <img src="../images/Resized-header.jpg" alt="Homepage Header" />
+        <img src="/images/Resized-header.jpg" alt="Homepage Header" />
         <div className={styles.overlayLogo}>
-          <img src="../images/Aaryn-logo-slogan.png" alt="Aaryn logo" />
+          <img src="./images/Aaryn-logo-slogan.png" alt="Aaryn logo" />
         </div>
       </div>
     )}
     <Header />
     <div className={styles.logoAaryn}>
-      <img src="/images/Aaryn-logo.png" alt="Aaryn logo" />
+      <img src="images/Aaryn-logo.png" alt="Aaryn logo" />
     </div>
     <main>{children}</main>
     <Footer />
