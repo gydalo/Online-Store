@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addProduct } from "../../components/CartSlice";
 import DiscountLabel from "../../components/DiscountLabel";
 import styles from "./index.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import AddToCartButton from "../../components/AddToCartButton";
 
 const Product = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -58,9 +56,7 @@ const Product = () => {
           <p className={styles.originalPrice}>
             Original price: {product.price} kr
           </p>
-          <button onClick={() => dispatch(addProduct(product))}>
-            Add to cart
-          </button>
+          <AddToCartButton product={product} />
         </div>
       </div>
       <div className={styles.reviewsHeading}>

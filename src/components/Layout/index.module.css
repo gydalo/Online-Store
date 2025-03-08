@@ -62,6 +62,13 @@ button:hover {
   outline: solid 1px #fd805d;
 }
 
+.added {
+  color: #fd805d;
+  background-color: transparent;
+  outline: solid 1px #fd805d;
+  cursor: default;
+}
+
 h1,
 h2,
 h3,

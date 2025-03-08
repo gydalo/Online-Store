@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addProduct } from "../../components/CartSlice";
 import DiscountLabel from "../../components/DiscountLabel";
 import styles from "./index.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import AddToCartButton from "../../components/AddToCartButton";
 
 const url = "https://v2.api.noroff.dev/online-shop";
 
 const Home = () => {
-  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -88,9 +86,7 @@ const Home = () => {
                   Original price: {product.price} kr
                 </p>
               </Link>
-              <button onClick={() => dispatch(addProduct(product))}>
-                Add to cart
-              </button>
+              <AddToCartButton product={product} />
             </div>
           ))
         ) : (
