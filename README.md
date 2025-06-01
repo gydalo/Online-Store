@@ -1,8 +1,28 @@
-# React + Vite
+# Aaryn - Fake Online Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aaryn is a simple fake online store web application built with React and Noroffs API. It allows users to browse products, add items to their cart, and proceed to checkout or clear the cart entirely. The project uses CSS Modules for component-based styling.
 
-Currently, two official plugins are available:
+## Description
+Aaryn simulates the basic functionality of an online shopping experience. Users can interact with the product catalog, add products to a cart, view the cart, remove all items, and initiate a fake checkout process.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Design Phase
+The layout was styled using CSS Modules, scoped to each component for better organization and maintainability. I focused on a clean, minimal design.
+
+## Development Phase
+This project was built using:
+- React (JavaScript)
+- CSS Modules
+
+React’s state management was used to handle cart functionality and dynamic rendering of the UI across product, cart, and checkout pages.
+
+## Features
+- Product listing page
+- Add to cart functionality
+- View and clear cart
+- Proceed to checkout view
+
+## Target Audience
+Aaryn was created as a learning project to demonstrate a basic e-commerce flow. It's ideal for anyone exploring how online stores work or wanting to see a simplified shopping cart system in action.
+
+## How to Use
+Simply browse the products, add items to your cart, and either clear the cart or head to checkout. No login is required.
