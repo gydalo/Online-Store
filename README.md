@@ -1,19 +1,28 @@
-# Aaryn - Fake Online Store
+# Aaryn - JavaScript Frameworks
 
-Aaryn is a simple fake online store web application built with React and Noroffs API. It allows users to browse products, add items to their cart, and proceed to checkout or clear the cart entirely. The project uses CSS Modules for component-based styling.
+
+
+Aaryn is a simple fake online store web application built with React. It allows users to browse products, add items to their cart, and proceed to checkout or clear the cart entirely. The project uses CSS Modules for component-based styling.
 
 ## Description
-Aaryn simulates the basic functionality of an online shopping experience. Users can interact with the product catalog, add products to a cart, view the cart, remove all items, and initiate a fake checkout process.
+Aaryn is a fictional shopping site that provides users with a simple, interactive shopping experience. Users can:
+- Browse a catalog of items
+- Add products to their cart
+- View the cart contents
+- Remove all items with one click
+- Continue to a checkout screen
+  
+There is no login or registration required. The app is meant to demonstrate the shopping cart experience in an easy and approachable way.
 
 ## Design Phase
-The layout was styled using CSS Modules, scoped to each component for better organization and maintainability. I focused on a clean, minimal design.
+The design was first designed using Figma. When I was happy with the design I started the project in Visual Studio Code. The layout was styled using CSS Modules, for better organization and maintainability. I focused on a clean, minimal design.
 
 ## Development Phase
-This project was built using:
-- React (JavaScript)
-- CSS Modules
+Aaryn was developed using plain React with JavaScript. React’s state management was used to handle cart functionality and dynamic rendering of the UI across product, cart, and checkout pages.
 
-React’s state management was used to handle cart functionality and dynamic rendering of the UI across product, cart, and checkout pages.
+### Built With
+React (JavaScript)
+CSS Modules
 
 ## Features
 - Product listing page
