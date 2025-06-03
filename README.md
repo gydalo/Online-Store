@@ -1,6 +1,7 @@
 # Aaryn - JavaScript Frameworks
 
-![image](https://i.postimg.cc/KjqkC8zw/Skjermbilde-2025-05-28-112313.png)
+![image](https://i.postimg.cc/SsjpDSBJ/aaryn-screenshot1.png)
+![image](https://i.postimg.cc/4dMRMCGw/aaryn-screenshot2.png)
 
 Aaryn is a simple fake online store web application built with React. It allows users to browse products, add items to their cart, and proceed to checkout or clear the cart entirely. The project uses CSS Modules for component-based styling.
 
