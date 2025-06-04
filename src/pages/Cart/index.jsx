@@ -6,11 +6,35 @@ import { resetCart } from "../../components/CartSlice";
 import DiscountLabel from "../../components/DiscountLabel";
 import styles from "./index.module.css";
 
+/**
+ * Cart component
+ *
+ * Displays the products currently in the shopping cart.
+ * Allows users to increase/decrease product quantity, view totals, and proceed to checkout.
+ *
+ * - Syncs cart with localStorage on change
+ * - Uses Redux to manage cart state
+ * - Applies discounts using the DiscountLabel component
+ *
+ * @component
+ * @returns {JSX.Element} The rendered cart page
+ */
 const Cart = () => {
   const dispatch = useDispatch();
+
+  /**
+   * All products currently in the cart
+   * @type {Array<Object>}
+   */
   const cartItems = useSelector((state) => state.cart.products);
+
+  /**
+   * Total price of all products in the cart
+   * @type {number}
+   */
   const cartTotal = useSelector((state) => state.cart.cartTotal);
 
+  // Cart is sent to localStorage whenever cartItems change
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -18,6 +42,7 @@ const Cart = () => {
   return (
     <div>
       <h1 className={styles.cartTitle}>Cart</h1>
+
       {cartItems.map((product) => (
         <div key={product.id}>
           <div className={styles.cartContainer}>
@@ -36,6 +61,7 @@ const Cart = () => {
                 Subtotal:{" "}
                 {(product.quantity * product.discountedPrice).toFixed(2)} kr
               </p>
+
               <div className={styles.buttonsCartContainer}>
                 <div className={styles.buttonCartAdd}>
                   <button onClick={() => dispatch(addProduct(product))}>
@@ -52,6 +78,7 @@ const Cart = () => {
           </div>
         </div>
       ))}
+
       <div className={styles.cartCheckout}>
         <h2>Cart Total: {cartTotal.toFixed(2)} kr</h2>
 
@@ -59,10 +86,13 @@ const Cart = () => {
           <p>Your cart is empty.</p>
         ) : (
           <Link to="/checkout">
-          <button className={styles.checkoutButton} onClick={() => dispatch(resetCart())}>
-            Checkout
-          </button>
-        </Link>
+            <button
+              className={styles.checkoutButton}
+              onClick={() => dispatch(resetCart())}
+            >
+              Checkout
+            </button>
+          </Link>
         )}
       </div>
     </div>

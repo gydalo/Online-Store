@@ -4,6 +4,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import styles from "./index.module.css";
 import * as yup from "yup";
 
+/**
+ * Yup schema for validating contact form fields.
+ *
+ * Fields:
+ * - firstName: required, 2–15 characters
+ * - lastName: required, 2–15 characters
+ * - email: required, valid format
+ * - subject: required, minimum 3 characters
+ * - body: required, minimum 3 characters
+ */
 const schema = yup
   .object({
     firstName: yup
@@ -31,8 +41,18 @@ const schema = yup
   })
   .required();
 
+/**
+ * Contact component
+ *
+ * A contact form that validates input using react-hook-form and yup.
+ * On submission, it logs the form data, resets the form, and displays a confirmation message.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered contact form
+ */
 function Contact() {
   const [successMessage, setSuccessMessage] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -42,6 +62,11 @@ function Contact() {
     resolver: yupResolver(schema),
   });
 
+  /**
+   * Handles form submission.
+   *
+   * @param {Object} data - The validated form data
+   */
   function onSubmit(data) {
     console.log(data);
     setSuccessMessage("Thank you, we will get back to you soon!.");
@@ -57,30 +82,36 @@ function Contact() {
           <input {...register("firstName")} />
           <p className={styles.errorMessage}>{errors.firstName?.message}</p>
         </div>
+
         <div className={styles.inputFormSmall}>
           <label htmlFor="lastName">Last Name</label>
           <input {...register("lastName")} />
           <p className={styles.errorMessage}>{errors.lastName?.message}</p>
         </div>
+
         <div className={styles.inputFormSmall}>
           <label htmlFor="email">Email</label>
           <input {...register("email")} />
           <p className={styles.errorMessage}>{errors.email?.message}</p>
         </div>
+
         <div className={styles.inputFormMedium}>
           <label htmlFor="subject">Subject</label>
           <input {...register("subject")} />
           <p className={styles.errorMessage}>{errors.subject?.message}</p>
         </div>
+
         <div className={styles.inputFormBig}>
           <label htmlFor="body">Body</label>
           <input {...register("body")} />
           <p className={styles.errorMessage}>{errors.body?.message}</p>
         </div>
+
         <div className={styles.inputForm}>
           <button type="submit">Submit</button>
         </div>
       </form>
+
       {successMessage && <p>{successMessage}</p>}
     </div>
   );

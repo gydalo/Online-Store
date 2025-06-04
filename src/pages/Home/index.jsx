@@ -8,13 +8,45 @@ import AddToCartButton from "../../components/AddToCartButton";
 
 const url = "https://v2.api.noroff.dev/online-shop";
 
+/**
+ * Home component
+ *
+ * Displays a list of products from the Noroff Online Shop API.
+ * Supports loading state, error state, search filtering, and shows discount info.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered home page with search and product cards
+ */
 const Home = () => {
+  /**
+   * All products fetched from the API
+   * @type {[Array<Object>, Function]}
+   */
   const [products, setProducts] = useState([]);
+
+  /**
+   * Whether the data is currently loading
+   * @type {[boolean, Function]}
+   */
   const [isLoading, setIsLoading] = useState(false);
+
+  /**
+   * Whether an error occurred during fetch
+   * @type {[boolean, Function]}
+   */
   const [isError, setIsError] = useState(false);
+
+  /**
+   * The current search input value
+   * @type {[string, Function]}
+   */
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Fetch products on component mount
   useEffect(() => {
+    /**
+     * Fetches product data from the API
+     */
     async function getData() {
       try {
         setIsError(false);
@@ -22,7 +54,6 @@ const Home = () => {
         const response = await fetch(url);
         const json = await response.json();
         setProducts(json.data);
-
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -33,6 +64,10 @@ const Home = () => {
     getData();
   }, []);
 
+  /**
+   * Filters products by title or tags based on the search query
+   * @type {Array<Object>}
+   */
   const filteredProducts = products.filter((product) => {
     const productTags = Array.isArray(product.tags) ? product.tags : [];
 
@@ -66,6 +101,7 @@ const Home = () => {
           className={styles.inputSearch}
         />
       </div>
+
       <div className={styles.productList}>
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
